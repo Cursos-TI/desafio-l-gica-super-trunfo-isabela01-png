@@ -1,43 +1,124 @@
+
 #include <stdio.h>
 
-// Desafio Super Trunfo - Países
-// Tema 2 - Comparação das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de comparação de cartas de cidades. 
-// Siga os comentários para implementar cada parte do desafio.
+int main (){
 
-int main() {
-    // Definição das variáveis para armazenar as propriedades das cidades
-    // Você pode utilizar o código do primeiro desafio
+    printf ("Desfio cartas trunfo \n");
 
-    
-    // Cadastro das Cartas:
-    // Implemente a lógica para solicitar ao usuário que insira os dados das cidades
-    // utilizando a função scanf para capturar as entradas.
-    // utilize o código do primeiro desafio
+    \\estrutura para montar os dados da carta//
+    struct carta {
+        char estado [4];
+        char codigo [3];
+        char cidade [30];
+        int populacao;
+        float area;
+        float Pib;
+        int turismo;
+        float densidade1 , densidade2 ;
+        float percapita1 , percapita2 ;
+};
 
-    // Exemplo:
-    // printf("Digite o código da cidade: ");
-    // scanf("%s", codigo);
-    // 
-    // (Repita para cada propriedade)
+struct carta carta1 , carta2 ;
 
-    // Comparação de Cartas:
-    // Desenvolva a lógica de comparação entre duas cartas.
-    // Utilize estruturas de decisão como if, if-else para comparar atributos como população, área, PIB, etc.
 
-    // Exemplo:
-    // if (populacaoA > populacaoB) {
-    //     printf("Cidade 1 tem maior população.\n");
-    // } else {
-    //     printf("Cidade 2 tem maior população.\n");
-    // }
+\\entrada dos dados da primeira carta//
 
-    // Exibição dos Resultados:
-    // Após realizar as comparações, exiba os resultados para o usuário.
-    // Certifique-se de que o sistema mostre claramente qual carta venceu e com base em qual atributo.
+printf ("Insira os dados da primeira carta :\n");
 
-    // Exemplo:
-    // printf("A cidade vencedora é: %s\n", cidadeVencedora);
+printf ("Estado (A-H): ");
+scanf ("%s", carta1. estado);
 
-    return 0;
+printf ("Código da carta (ex: A01) : ");
+scanf ("%s", carta1.codigo) ;
+
+printf ("Nome da cidade : ");
+scanf ("%s", carta1.cidade);
+
+printf ("População : ");
+scanf("%d", &carta1.populacao);
+
+printf ("Area (em Km²): ");
+scanf ("%f", &carta1.area);
+
+printf ("Pib :");
+scanf ("%f", &carta1.Pib);
+
+printf ("Número de pontos turísticos :");
+scanf ("%d", &carta1.turismo);
+
+\\entrada dos dados da segunda carta//
+
+printf ("Insira os dados da segunda carta : \n");
+printf ("Estado (A-H) : ");
+scanf ("%s", carta2.estado);
+
+printf ("Código da carta (ex: A02): ");
+scanf ("%s", carta2.codigo);
+
+printf ("Nome da cidade : ");
+scanf("%s", carta2.cidade);
+
+printf ("População :");
+scanf ("%d", &carta2.populacao);
+
+printf ("Area (em Km²): ");
+scanf ("%f", &carta2.area);
+
+printf ("Pib :");
+scanf ("%f", &carta2.Pib);
+
+printf("Número de pontos turísticos :");
+scanf("%d", &carta2.turismo);
+
+
+\\Cálculos densidade e Pib per capita//
+densidade1 = carta1.populacao / carta1.area ;
+percapita1 = carta1.Pib / carta1.populacao ;
+densidade2 = carta2.populacao / carta2.area ;
+percapita2 = carta2.Pib / carta2.populacao ;
+
+
+\\Exibindo os dados das cartas//
+
+printf ("\nDados da primeira carta : \n");
+
+printf ("Estado : %s\n", carta1.estado);
+printf("Código da carta : %s\n", carta1.codigo);
+printf ("Nome da cidade : %s\n", carta1.cidade);
+printf("População: %d\n", carta1.populacao);
+printf("Area (em Km²): %.2f\n", carta1.area);
+printf ("Pib : %.2f\n", carta1.Pib);
+printf("Número de pontos turísticos :%d\n", carta1.turismo);
+printf ("Densidade Populacional : %.2f hab/km²\n",carta1.densidade1) ;
+printf("PIB per capita : reais %.2f\n", carta1.percapita1) ;
+
+
+\\Divisão entre carta1 e carta2//
+
+printf ("\nDados da segunda carta :\n");
+
+printf ("Estado : %s\n", carta2.estado);
+printf ("Código da carta : %s\n", carta2.codigo);
+printf("Nome da cidade : %s\n", carta2.cidade);
+printf("População : %d\n", carta2.populacao);
+printf("Area (em Km²): %.2f\n",carta2.area);
+printf("Pib : %.2f\n", carta2.Pib);
+printf ("Número de pontos turísticos : %d\n", carta2.turismo);
+printf ("Densidade Populacional: %.2f hab/km²\n", carta2.densidade2) ;
+printf ("PIB per capita : reais %.2f\n", carta2.percapita2) ;
+
+\\ Comparação da população das cartas//
+int carta1.populacao = 12325000 ;
+int carta2.populacao =6748000 ;
+
+if (carta1.populacao > carta2.populacao){
+    printf ("Cidade 1 tem maior população !\n");
+} else {
+    printf ("Cidade 2 tem maior população !\n") ;
+}
+
+
+return 0;
+
+
 }
